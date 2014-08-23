@@ -2,6 +2,9 @@ class Particle {
   PVector position;
   PVector velocity;
   final color c;
+  boolean bounce = false;
+  float mass = 1.0;
+  int generation = 0;
 
   Particle(PVector initPosition, PVector vel, color c) {
     this.position = initPosition;
@@ -25,6 +28,6 @@ class Particle {
   
   boolean inside(int width, int height) {
     return position.x >= 0 && position.x <= width &&
-     position.y >= 0 && position.y <= height; 
+     position.y >= 0; 
   }
 }
